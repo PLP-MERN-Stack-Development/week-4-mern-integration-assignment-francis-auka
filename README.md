@@ -1,79 +1,139 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19904229&assignment_repo_type=AssignmentRepo)
-# MERN Stack Integration Assignment
+# MERN Blog Application 📝
 
-This assignment focuses on building a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application that demonstrates seamless integration between front-end and back-end components.
+A full-stack MERN (MongoDB, Express, React, Node.js) blog platform that allows users to:
 
-## Assignment Overview
+- 🧠 Register and log in
+- ✍️ Create blog posts
+- 📄 View all posts
+- 📚 View post details
+- 🎨 Clean, styled UI using Tailwind CSS
 
-You will build a blog application with the following features:
-1. RESTful API with Express.js and MongoDB
-2. React front-end with component architecture
-3. Full CRUD functionality for blog posts
-4. User authentication and authorization
-5. Advanced features like image uploads and comments
+---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 mern-blog/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # Reusable components
-│   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── services/       # API services
-│   │   ├── context/        # React context providers
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Express.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Route controllers
-│   ├── models/             # Mongoose models
-│   ├── routes/             # API routes
-│   ├── middleware/         # Custom middleware
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
+├── client/        # React frontend
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/api.js
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   └── tailwind.config.js
+├── server/        # Express backend
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── server.js
+│   └── .env
+└── README.md
 ```
 
-## Getting Started
+---
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week4-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+## 🚀 Getting Started
 
-## Files Included
+### 🔧 Prerequisites
 
-- `Week4-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Configuration files
-  - Sample models and components
+- Node.js
+- MongoDB installed locally or use MongoDB Atlas
 
-## Requirements
+---
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git
+### 🔨 Backend Setup
 
-## Submission
+```bash
+cd server
+npm install
+```
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+**Environment Variables** (`.env`):
+```
+MONGO_URI=mongodb://localhost:27017/mern-blog
+PORT=5000
+```
 
-1. Complete both the client and server portions of the application
-2. Implement all required API endpoints
-3. Create the necessary React components and hooks
-4. Document your API and setup process in the README.md
-5. Include screenshots of your working application
+```bash
+npm start
+```
 
-## Resources
+> Server runs on `http://localhost:5000`
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [Mongoose Documentation](https://mongoosejs.com/docs/) 
+---
+
+### 💻 Frontend Setup
+
+```bash
+cd client
+npm install
+```
+
+If using Tailwind CSS:
+```bash
+npx tailwindcss init -p
+```
+
+Then configure `tailwind.config.js` and update `index.css` as needed.
+
+```bash
+npm run dev
+```
+
+> Frontend runs on `http://localhost:5173`
+
+---
+
+## 🔑 Features
+
+- 🔐 User authentication (Register / Login)
+- ✍️ Create blog post
+- 📃 View blog posts
+- 🗃️ Filter posts by category or slug
+- 🧼 Tailwind CSS styling
+- 📡 Axios for API calls
+- 💾 MongoDB for storage
+
+---
+
+## 🌐 API Endpoints
+
+### Auth
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+
+### Posts
+- `GET /api/posts`
+- `POST /api/posts`
+
+---
+
+## 🙌 Author
+
+Created by **Francis Auka**  
+📧 Feel free to connect or fork!
+
+---
+
+## 🧪 Test Data
+
+Use Postman or your frontend forms to test:
+```json
+{
+  "title": "First Blog",
+  "content": "This is a test post.",
+  "author": "Francis",
+  "slug": "first-blog",
+  "category": "6543210987654321abcd1234"
+}
+```
+
+---
+
+## ✅ Status
+
+- ✅ Backend setup complete
+- ✅ React pages created
+- ✅ Post creation and viewing works
+- 🔄 Styling in progress
